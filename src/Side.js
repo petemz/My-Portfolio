@@ -3,10 +3,9 @@ import {Context} from "./Context"
 import { useContext } from "react"
 
 const Side = () => {
-    const {currentPage, setCurrentPage, toUpperCase, pages, pageUp, pageDown} = useContext(Context)
+    const {currentPage, toUpperCase, pageUp, pageDown} = useContext(Context)
     
     const currentDate = new Date().toLocaleDateString()
-
 
     return (
         <div className=" h-[520px] fixed z-10 sm:hidden left-4 mt-5 text-base justify-between items-center flex [writing-mode:vertical-lr]">

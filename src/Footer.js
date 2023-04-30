@@ -3,7 +3,7 @@ import {Context} from "./Context"
 import { useContext } from "react"
 
 const Footer = () => {
-    const {currentPage, setCurrentPage, toUpperCase, pages, pageUp, pageDown} = useContext(Context)
+    const {currentPage, toUpperCase,  pageUp, pageDown} = useContext(Context)
     const currentYear = new Date().getFullYear()
 
     return (

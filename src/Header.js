@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
 import {Context} from "./Context"
 import { useContext } from "react"
-import { FiMenu, FiX } from "react-icons/fi"
+import { FiMenu } from "react-icons/fi"
 //import { useState } from "react"
 
 const Header = () => {
-    const {currentPage, setCurrentPage,  overlayMenu, setOverlayMenu, navItems, toUpperCase} = useContext(Context)
+    const {currentPage, setCurrentPage, setOverlayMenu, navItems, toUpperCase} = useContext(Context)
 
     const nav = navItems.map((item, index) => {
         const activeLink = currentPage.page === item ? `text-black border-b border-black` : ''
