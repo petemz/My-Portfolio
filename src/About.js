@@ -16,11 +16,11 @@ const About = () => {
 
     return ( 
         
-        <div className="bg-inherit md:pl-0 xl:pl-6 pl-40 2xl:pl-24 flex justify-between h-full w-full relative">
+        <div className="bg-inherit md:pl-0 xl:pl-6 pl-40 2xl:pl-24 pb-2 flex justify-between h-full w-full relative">
             <div className="xl:fixed xl:py-1 xl:w-full bg-inherit flex items-center">
                 <div className="w-max">
                     <p className="text-5xl md:text-4xl font-bold mt-2">About</p>
-                    <div className="flex items-center">
+                    <div className="flex items-center pb-3">
                         <div className="w-full h-[2px] mr-2 bg-black"></div>
                         <p className="text-xl md:text-lg flex">
                             <span className="mr-1">Page</span>
@@ -37,7 +37,7 @@ const About = () => {
                     In my free time, I love playing chess and listening to music.</p> 
                 </div>
 
-                <div className="grid grid-cols-3 m-auto w-full max-w-[800px]">
+                <div className="grid xs:grid-cols-2 grid-cols-3 m-auto w-full max-w-[800px]">
                         {badges.map(badge => {
                             return(
                                 <CredlyBadge id={badge.id} key={badge.id}/>

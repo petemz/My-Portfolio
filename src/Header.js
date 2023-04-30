@@ -28,8 +28,9 @@ const Header = () => {
     return (
         <header className="fixed z-40 top-0 h-20 bg-inherit px-6 w-full flex justify-between items-center"> 
             <Link onClick={() => setCurrentPage({page:'home', index: 1})} to="/">
-                <div className="text-3xl font-semibold ">
-                    <span>Emmies</span>
+                <div className="text-3xl pb-0.5 pr-2 relative font-semibold ">
+                    <span >Emmies</span>
+                    <div className="border-b-[3px] border-r-[3px] absolute left-2/3 right-0 top-1/2 bottom-0 border-emerald-800"></div>
                 </div>
             </Link>
 

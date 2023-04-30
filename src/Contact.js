@@ -14,7 +14,7 @@ const Contact = () => {
     ]
 
     return (
-        <div className="bg-[#eee] sm:pl-0 md:pl-4 xl:pl-6 pl-32 2xl:pl-24 pr-16 md:pr-4 flex justify-between h-full w-full relative">
+        <div className="bg-inherit sm:pl-0 md:pl-4 xl:pl-6 pl-32 2xl:pl-24 pr-16 md:pr-4 flex justify-between h-full w-full relative">
             <div className="xl:fixed xl:py-1 xl:w-full bg-inherit z-20 flex items-center">
                 <div className="w-max">
                     <p className="text-5xl md:text-4xl font-bold mt-2">Contact</p>
@@ -28,7 +28,7 @@ const Contact = () => {
                 </div>
             </div>
             
-            <div className="relative  xl:px-10 md:px-0 sm:pt-28 xl:w-full sm:w-max h-max my-auto sm:mx-auto gap-x-10 gap-y-16 sm:grid-cols-1 grid-cols-2 grid">
+            <div className="relative pb-6 xl:px-10 md:px-0 sm:pt-28 xl:w-full sm:w-max h-max my-auto sm:mx-auto gap-x-10 gap-y-16 sm:grid-cols-1 grid-cols-2 grid">
                 {medias.map(media => {
                     return (
                         <div className="w-[305px] md:w-72 sm:w-[305px] sm:h-40 md:h-36 group h-40 relative transition-all ease-out hover:scale-110 duration-500" key={media.name}>
