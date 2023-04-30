@@ -1,0 +1,36 @@
+<div className="px-8 mr-40 overflow-hidden w-full flex justify-between relative bg-[#eee] pb-16">
+
+    {/*<div className="pl-28 xl:pl-5 xl:bg-red-400 pr-48">
+        <div className="pt-56 xl:pt-1 z-20 fixed xl:top-20 h-24 bg-inherit w-full ">
+            <div className="w-max">
+                <p className="text-5xl font-bold mt-2">About</p>
+                <div className="flex items-center justify-center">
+                    <div className="w-8 h-[2px] bg-black mr-2"></div>
+                    <span className="text-xl">
+                        <span>Page</span>
+                        <span>{` 0${currentPage.index}`}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div className="pt-20 xl:pt-28 w-[750px] bg-slate-600 xl:w-full flex flex-col">
+            <div>
+                <p className="text-lg">Hi, I'm Peter Emmies, a student of Computer Science at the University of Lagos. As a frontend web developer, I am dedicated to creating functional, interactive and sleek web applications that meet the needs of clients and users alike. With expertise in JavaScript, React.js, Vue.js, and other technologies.
+                <br/>I also have a strong understanding and knowledge of cybersecurity and networking principles. I am always eager to take on new challenges and push my skills to the next level.
+                In my free time, I love playing chess and listening to music.</p> 
+            </div>
+
+            <div className="grid grid-cols-3 justify-center gap-x-5">
+                    {badges.map(badge => {
+                        return(
+                            <CredlyBadge id={badge.id}/>
+                        )}
+                    )}
+            </div>
+
+            <div className="w-2/3 m-auto">
+                <img src={reactCert} alt={'React Certiificate'}/>
+            </div>
+        </div>
+    </div>*/}

@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom"
 import {Context} from "./Context"
 import { useContext } from "react"
+import { FiMenu, FiX } from "react-icons/fi"
+//import { useState } from "react"
 
 const Header = () => {
-    const {currentPage, setCurrentPage} = useContext(Context)
-    const navItems = ["home", "about", "skills", "projects", "contact"]
-
-    const toUpperCase = (word) => {
-        return word.charAt(0).toUpperCase() + word.slice(1)
-    }
+    const {currentPage, setCurrentPage,  overlayMenu, setOverlayMenu, navItems, toUpperCase} = useContext(Context)
 
     const nav = navItems.map((item, index) => {
         const activeLink = currentPage.page === item ? `text-black border-b border-black` : ''
         return (
-            <li key={item} className="hover:text-black ml-6">
+            <li key={index} className="hover:text-black ml-6">
                 <Link 
                     onClick={() => setCurrentPage({page:item, index: index + 1})} 
                     to={item === 'home' ? '/' : '/' + item} 
@@ -29,14 +26,21 @@ const Header = () => {
     )
 
     return (
-        <header className="fixed z-50 top-0 h-20 bg-[#eeeeee] px-6 w-full flex justify-between items-center"> 
+        <header className="fixed z-40 top-0 h-20 bg-inherit px-6 w-full flex justify-between items-center"> 
             <Link onClick={() => setCurrentPage({page:'home', index: 1})} to="/">
                 <div className="text-3xl font-semibold ">
                     <span>Emmies</span>
                 </div>
             </Link>
 
-            <nav className="text-[17px] text-[#5f5f5f]">
+            
+            <button onClick={() => setOverlayMenu(true)} className="text-4xl hidden sm:block">
+                { <FiMenu/>}
+            </button>
+            
+
+            <nav className="text-[17px] sm:hidden text-[#5f5f5f] ">
+                
                 <ul className="flex">
                     {nav}
                 </ul>
