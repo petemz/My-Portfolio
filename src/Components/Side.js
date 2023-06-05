@@ -1,5 +1,5 @@
 import { FaArrowDown, FaArrowUp } from "react-icons/fa"
-import {Context} from "./Context"
+import {Context} from "../Context"
 import { useContext } from "react"
 
 const Side = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './Styles/index.css';
+import './Styles/App.css'
 import App from './App';
-import './App.css'
 import {BrowserRouter as Router} from "react-router-dom"
 import {ContextProvider} from "./Context"
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import {Context} from "./Context"
+import {Context} from "../Context"
 import { useContext } from "react"
 import { FiMenu } from "react-icons/fi"
 //import { useState } from "react"

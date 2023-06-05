@@ -1,5 +1,5 @@
 
-import {Context} from "./Context"
+import {Context} from "../Context"
 import { useContext } from "react"
 
 const Skills = () => {

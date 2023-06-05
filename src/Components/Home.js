@@ -1,7 +1,7 @@
-import handwave from "./handwave.gif"
-import {Context} from "./Context"
+import handwave from "../Assets/handwave.gif"
+import {Context} from "../Context"
 import { useContext } from "react"
-import avatar from "./avatar.jpeg"
+import avatar from "../Assets/avatar.jpeg"
 import { Link } from "react-router-dom"
 
 const Home = () => {
