@@ -1,11 +1,11 @@
-import Footer from "./Footer";
-import Header from "./Header"
-import Side from "./Side";
-import Home from "./Home";
-import Skills from "./Skills";
-import Contact from "./Contact";
-import Projects from "./Projects"
-import About from "./About"
+import Footer from "./Components/Footer";
+import Header from "./Components/Header"
+import Side from "./Components/Side";
+import Home from "./Components/Home";
+import Skills from "./Components/Skills";
+import Contact from "./Components/Contact";
+import Projects from "./Components/Projects"
+import About from "./Components/About"
 import { Routes, Route, Link } from "react-router-dom"
 import {Context} from "./Context"
 import { useContext } from "react"
@@ -20,7 +20,7 @@ function App() {
       <Side />
       <Footer />
 
-      <div className="sm:pl-6 pl-16 pr-4 overflow-y-scroll h-full bg-inherit">
+      <div className="sm:pl-6 pl-16 pr-4 overflow-y-scroll no-scrollbar h-full bg-inherit">
         <Routes>
           <Route exact path="/"
             element={<Home />}/>
