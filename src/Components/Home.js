@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 const Home = () => {
   const {setCurrentPage} = useContext(Context)
 
-    
     return (
         <div className="overflow-y-hidden h-full pl-28 xl:pl-12 pr-28 xl:pr-10 lg:px-10 flex justify-between xl:items-center lg:pb-16 lg:justify-center">
           <div className="flex flex-col items-center justify-center lg:pt-12">
