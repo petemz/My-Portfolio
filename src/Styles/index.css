@@ -46,3 +46,17 @@ code {
     transform: translateX(0);
   }
 }
+
+.slideshow {
+  height: 400px; /* Set the desired height of the slideshow */
+  overflow: hidden;
+}
+
+.slide {
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide.active {
+  transform: translateY(-100%);
+}
