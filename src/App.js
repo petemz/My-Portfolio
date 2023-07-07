@@ -6,13 +6,17 @@ import Skills from "./Components/Skills";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects"
 import About from "./Components/About"
-import { Routes, Route, Link } from "react-router-dom"
-import {Context} from "./Context"
-import { useContext } from "react"
+import Welcome from "./Components/Welcome";
+import { Routes, Route, Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import {Context} from "./Context";
 import { FiX } from "react-icons/fi";
 
 function App() {
   const {currentPage, setCurrentPage, overlayMenu, setOverlayMenu, navItems, toUpperCase,} = useContext(Context)
+
+  const [isWelcome, setIsWelcome] = useState(true)
+  setTimeout(() => {setIsWelcome(false)}, 6000)
 
   return (
     <div className="bg-[#eeeeee] cursor-context-menu h-screen pb-16 pt-20">
@@ -65,6 +69,7 @@ function App() {
         </div>
       }
         
+      {isWelcome && <Welcome />}
     </div> 
   )
 }
