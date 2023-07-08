@@ -1,30 +1,29 @@
+import { Routes, Route, Link } from "react-router-dom";
+import { useState, useContext, useEffect, } from "react";
+import {Context} from "./Context";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header"
 import Side from "./Components/Side";
 import Home from "./Components/Home";
 import Skills from "./Components/Skills";
 import Contact from "./Components/Contact";
-import Projects from "./Components/Projects"
-import About from "./Components/About"
+import Projects from "./Components/Projects";
+import About from "./Components/About";
 import Welcome from "./Components/Welcome";
-import { Routes, Route, Link } from "react-router-dom";
-import { useState, useContext, useEffect, } from "react";
-import {Context} from "./Context";
 import { FiX } from "react-icons/fi";
-
 import { motion, useAnimation } from 'framer-motion';
 
 function App() {
   const {currentPage, setCurrentPage, overlayMenu, setOverlayMenu, navItems, toUpperCase,} = useContext(Context)
 
+  const controls = useAnimation()
+
   const [isWelcome, setIsWelcome] = useState(true)
   setTimeout(() => {setIsWelcome(false)}, 5900)
 
-  const controls = useAnimation();
-
   useEffect(() => {
     const timer = setTimeout(async () => {
-      await controls.start({ y: '-100%' });
+      await controls.start({ y: '-100%' })
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -89,8 +88,7 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           <Welcome />
-        </motion.div>
-        
+        </motion.div>      
       }
     </div> 
   )
