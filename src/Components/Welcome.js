@@ -7,27 +7,27 @@ const Welcome = () => {
 
     const interval = 1000
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const carouselRef = useRef(null);
-    const slideHeight = 70; // Adjust the slide height as needed
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const carouselRef = useRef(null)
+    const slideHeight = 70
 
     
-  const isLastSlide = currentSlide === words.length - 1;
+    const isLastSlide = currentSlide === words.length - 1
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (!isLastSlide) {
-        setCurrentSlide((prevSlide) => prevSlide + 1);
-      }
-    }, interval)
+    useEffect(() => {
+        const timer = setInterval(() => {
+        if (!isLastSlide) {
+            setCurrentSlide((prevSlide) => prevSlide + 1)
+        }
+        }, interval)
 
-    return () => clearInterval(timer);
-  }, [isLastSlide, interval]);
+        return () => clearInterval(timer)
+    }, [isLastSlide, interval])
   
     useEffect(() => {
-      const carousel = carouselRef.current;
-      carousel.style.transform = `translateY(-${slideHeight * currentSlide}px)`;
-    }, [currentSlide, slideHeight]);
+        const carousel = carouselRef.current;
+        carousel.style.transform = `translateY(-${slideHeight * currentSlide}px)`
+    }, [currentSlide, slideHeight])
   
     return (
         <div className="bg-[#eeeeee] text-black h-full w-full flex justify-center items-center">
