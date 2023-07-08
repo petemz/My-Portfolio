@@ -8,18 +8,30 @@ import Projects from "./Components/Projects"
 import About from "./Components/About"
 import Welcome from "./Components/Welcome";
 import { Routes, Route, Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, } from "react";
 import {Context} from "./Context";
 import { FiX } from "react-icons/fi";
+
+import { motion, useAnimation } from 'framer-motion';
 
 function App() {
   const {currentPage, setCurrentPage, overlayMenu, setOverlayMenu, navItems, toUpperCase,} = useContext(Context)
 
   const [isWelcome, setIsWelcome] = useState(true)
-  setTimeout(() => {setIsWelcome(false)}, 6000)
+  setTimeout(() => {setIsWelcome(false)}, 5900)
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      await controls.start({ y: '-100%' });
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [controls]);
 
   return (
-    <div className="bg-[#eeeeee] cursor-context-menu h-screen pb-16 pt-20">
+    <div className="bg-[#eeeeee] relative cursor-context-menu h-screen pb-16 pt-20">
       <Header />
       <Side />
       <Footer />
@@ -69,7 +81,17 @@ function App() {
         </div>
       }
         
-      {isWelcome && <Welcome />}
+      {isWelcome && 
+        <motion.div
+          className="slide fixed h-screen w-full z-50 top-0 bg-red-600"
+          initial={{ y: 0 }}
+          animate={controls}
+          transition={{ duration: 0.5 }}
+        >
+          <Welcome />
+        </motion.div>
+        
+      }
     </div> 
   )
 }

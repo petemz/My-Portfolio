@@ -3,21 +3,26 @@ import { useEffect } from "react";
 import Logo from "../Assets/Logo";
 
 const Welcome = () => {
-    const words = ['HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'VUE', 'TYPESCRIPT']
+    const words = ['HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'TYPESCRIPT']
 
     const interval = 1000
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const carouselRef = useRef(null);
     const slideHeight = 70; // Adjust the slide height as needed
-  
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % words.length);
-      }, interval);
-  
-      return () => clearInterval(timer);
-    }, [words.length, interval]);
+
+    
+  const isLastSlide = currentSlide === words.length - 1;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isLastSlide) {
+        setCurrentSlide((prevSlide) => prevSlide + 1);
+      }
+    }, interval)
+
+    return () => clearInterval(timer);
+  }, [isLastSlide, interval]);
   
     useEffect(() => {
       const carousel = carouselRef.current;
@@ -25,7 +30,7 @@ const Welcome = () => {
     }, [currentSlide, slideHeight]);
   
     return (
-        <div className="bg-[#eeeeee] text-black h-screen w-full flex justify-center items-center fixed z-50 top-0">
+        <div className="bg-[#eeeeee] text-black h-full w-full flex justify-center items-center">
             <Logo />
 
             <div className="overflow-hidden ml-10 text-emerald-800">
@@ -41,6 +46,8 @@ const Welcome = () => {
                     ))}
                 </div>
             </div>
+
+            
         </div>
     );
 
