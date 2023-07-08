@@ -6,7 +6,6 @@ const Projects = () => {
     const { currentPage } = useContext(Context)
 
     const projects = [
-        
         {name:"ImageHive", languages:"React + Tailwind CSS", description:"Beautiful image gallery powered by the Unsplash API", link:"https://model-unsplash.netlify.app/"},
         {name:"Naijchat", languages:"ReactJS, NodeJS, MongoDB, Socket IO", description:"A microblogging platform.", link:"https://naij.netlify.app"},
         {name:"Canal Market Clone", languages:"ReactJS, Tailwind CSS, GSAP", description:"A clone of the Canal Market website", link:"https://canal-market-clone.vercel.app"},
@@ -14,8 +13,8 @@ const Projects = () => {
         {name:"Form Templates", languages:"React + Tailwind CSS", description:"A Form Template Search Interface with multiple features.", link:"https://form-templates-petemz.netlify.app/"},
         {name:"PharmAssist", languages:"React + Tailwind CSS", description:"Manage medication with ease - Prescription app", link:"https://pharamacy.netlify.app/"},
         {name:"PixSale", languages:"React + Tailwind CSS", description:"Browse and buy amazing photos online.", link:"https://petemz.github.io/bejamas/"},
-    
     ]
+    
     return (
         <div className="bg-inherit md:px-0 px-6 h-max w-full  relative">
             <div className="fixed py-1 z-10 w-full bg-[#eee] flex items-center">
