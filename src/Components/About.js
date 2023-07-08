@@ -1,5 +1,5 @@
 import CredlyBadge from "./Icons"
-import {Context} from "../Context"
+import { Context } from "../Context"
 import { useContext } from "react"
 import reactCert from '../Assets/reactCert.png'
 
@@ -15,7 +15,6 @@ const About = () => {
     ]
 
     return ( 
-        
         <div className="bg-inherit md:pl-0 xl:pl-6 pl-40 2xl:pl-24 pb-2 flex justify-between h-full w-full relative">
             <div className="xl:fixed xl:py-1 xl:w-full bg-inherit flex items-center">
                 <div className="w-max">
