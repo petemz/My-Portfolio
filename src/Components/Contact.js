@@ -5,11 +5,10 @@ import { useContext } from "react"
 const Contact = () => {
     const {currentPage} = useContext(Context)
 
-    const medias = [
+    const contacts = [
         {name: "Email", username: "peteremmies7@gmail.com", link:"mailto:peteremmies7@gmail.com", icon: <FaEnvelope />},
         {name: "Github", username: "petemz", link:"https://github.com/petemz", icon: <FaGithub />}, 
         {name: "LinkedIn", username: "Peter Emmies", link:"https://www.linkedin.com/in/peter-emmies", icon: <FaLinkedin />},
-        //{name: "Instagram", username: "petemz", link:"https://www.instagram.com/petemz", icon:<FaInstagram />},
         {name: "Twitter", username: "petemz_", link:"https://twitter.com/petemz_", icon:<FaTwitter />}, 
     ]
 
@@ -28,29 +27,29 @@ const Contact = () => {
                 </div>
             </div>
             
-            <div className="relative pb-6 xl:px-10 md:px-0 sm:pt-28 xl:w-full sm:w-max h-max my-auto sm:mx-auto gap-x-10 gap-y-16 sm:grid-cols-1 grid-cols-2 grid">
-                {medias.map(media => {
+            <div className="relative pb-6 xl:px-10 md:px-0 pt-20 sm:pt-28 xl:w-full sm:w-max h-max my-auto sm:mx-auto gap-x-10 gap-y-16 sm:grid-cols-1 grid-cols-2 grid">
+                {contacts.map(contact => {
                     return (
-                        <div className="w-[305px] md:w-72 sm:w-[305px] sm:h-40 md:h-36 group h-40 relative transition-all ease-out hover:scale-110 duration-500" key={media.name}>
+                        <div className="w-[305px] md:w-72 sm:w-[305px] sm:h-40 md:h-36 group h-40 relative transition-all ease-out hover:scale-110 duration-500" key={contact.name}>
                             <div className="absolute pt-6 px-5 bg-[#d8d2cb] group group-hover:bg-black group-hover:text-white top-0 left-0 w-72 h-36 z-10">
                                 <div className="flex items-center text-2xl">
                                     <div className="mr-4">
-                                        {media.icon}
+                                        {contact.icon}
                                     </div>
-                                    <p className="">{media.name}</p>
+                                    <p className="">{contact.name}</p>
                                 </div>
                                 <p className="mt-1 mb-2">
-                                    <em>{media.username}</em>
+                                    <em>{contact.username}</em>
                                 </p>
-                                <a href={media.link} target="blank" className="w-max block group-hover:animate-wiggle">
+                                <a href={contact.link} target="blank" className="w-max block group-hover:animate-wiggle">
                                     <button className="w-[70px] h-8 px-2 text-white group-hover:bg-[#d8d2cb] group-hover:text-black hover:bg-[#d8d2cb] rounded bg-black flex justify-between items-center">
                                         <span>Visit</span>
                                         <span className="text-sm font font-bold"><FaArrowRight /></span>
                                     </button>
                                 </a>
                             </div>
+
                             <div className="absolute w-72 h-36 bottom-0 right-0 border-4 group-hover:bg-[#d8d2cb] border-black">
-                
                             </div>
                         </div>
                     )}
