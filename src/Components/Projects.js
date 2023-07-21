@@ -7,6 +7,7 @@ const Projects = () => {
 
     const projects = [
         {name:"ImageHive", languages:"React + Tailwind CSS", description:"Beautiful image gallery powered by the Unsplash API", link:"https://model-unsplash.netlify.app/"},
+        {name:"Yoshiki Art Clone", languages:"React + Tailwind CSS", description:"A clone of the Yoshiki Okamura Art website", link:"https://yoshikiokamura-clone.vercel.app"},
         {name:"Naijchat", languages:"ReactJS, NodeJS, MongoDB, Socket IO", description:"A microblogging platform.", link:"https://naij.netlify.app"},
         {name:"Canal Market Clone", languages:"ReactJS, Tailwind CSS, GSAP", description:"A clone of the Canal Market website", link:"https://canal-market-clone.vercel.app"},
         {name:"Vivasia", languages:"VueJS + CSS", description:"Unveiling the beauty and diversity of Asia.", link:"https://vivasia.netlify.app/"},
