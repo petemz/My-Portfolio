@@ -3,10 +3,11 @@ import {Context} from "../Context"
 import { useContext } from "react"
 import { FiMenu } from "react-icons/fi"
 import Logo from "../Assets/Logo"
+import { toUpperCase } from "../Utilities/Utilities"
 //import { useState } from "react"
 
 const Header = () => {
-    const {currentPage, setCurrentPage, setOverlayMenu, navItems, toUpperCase} = useContext(Context)
+    const {currentPage, setCurrentPage, setOverlayMenu, navItems} = useContext(Context)
 
     const nav = navItems.map((item, index) => {
         const activeLink = currentPage.page === item ? `text-black border-b border-black` : ''
@@ -34,12 +35,10 @@ const Header = () => {
 
             
             <button onClick={() => setOverlayMenu(true)} className="text-4xl hidden sm:block">
-                { <FiMenu/>}
+                {<FiMenu/>}
             </button>
-            
 
-            <nav className="text-[17px] sm:hidden text-[#5f5f5f] ">
-                
+            <nav className="text-[17px] sm:hidden text-[#5f5f5f] ">  
                 <ul className="flex">
                     {nav}
                 </ul>
