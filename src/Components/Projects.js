@@ -17,7 +17,7 @@ const Projects = () => {
         {name:"Vivasia", languages:"VueJS + CSS", description:"Unveiling the beauty and diversity of Asia.", link:"https://vivasia.netlify.app"},
         {name:"Form Templates", languages:"React + Tailwind CSS", description:"A Form Template Search Interface with multiple features.", link:"https://form-templates-petemz.netlify.app"},
         {name:"PharmAssist", languages:"React + Tailwind CSS", description:"Manage medication with ease - Prescription app", link:"https://pharamacy.netlify.app"},
-        {name:"PixSale", languages:"React + Tailwind CSS", description:"Browse and buy amazing photos online.", link:"https://petemz.github.io/bejamas"}
+        {name:"PixSale", languages:"React + Tailwind CSS", description:"Browse and buy amazing photos online.", link:"https://petemz.github.io/bejamas"},
     ]
     
     return (
