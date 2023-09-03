@@ -1,9 +1,10 @@
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaArrowRight, FaArrowLeft } from "react-icons/fa"
-import {Context} from "../Context"
 import { useContext } from "react"
+import {Context} from "../Context"
+import { toUpperCase } from "../Utilities/Utilities"
 
 const Footer = () => {
-    const {currentPage, toUpperCase,  pageUp, pageDown} = useContext(Context)
+    const {currentPage, pageUp, pageDown} = useContext(Context)
     const currentYear = new Date().getFullYear()
 
     return (

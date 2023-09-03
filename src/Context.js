@@ -8,9 +8,6 @@ function ContextProvider(props) {
     const [overlayMenu, setOverlayMenu] = useState(false)
     
     const navItems = ["home", "about", "skills", "projects", "contact"]
-    const toUpperCase = (word) => {
-        return word.charAt(0).toUpperCase() + word.slice(1)
-    }
     
     const pages = [{page:"home", index:1}, {page:"about", index:2}, {page:"skills", index:3}, {page:"projects", index:4}, {page:"contact", index:5}]
         
@@ -33,7 +30,6 @@ function ContextProvider(props) {
     }
     
     let navigate = useNavigate()
-
     
     useEffect(() => {
         const storedCurrentPage = window.sessionStorage.getItem("currentPage");
@@ -47,7 +43,7 @@ function ContextProvider(props) {
     }, [currentPage])
 
     return (
-        <Context.Provider value={{currentPage, setCurrentPage, overlayMenu, setOverlayMenu, navItems, toUpperCase, pages, pageUp, pageDown}}>
+        <Context.Provider value={{currentPage, setCurrentPage, overlayMenu, setOverlayMenu, navItems, pages, pageUp, pageDown}}>
             {props.children}
         </Context.Provider>
     )

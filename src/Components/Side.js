@@ -1,9 +1,10 @@
 import { FaArrowDown, FaArrowUp } from "react-icons/fa"
-import {Context} from "../Context"
 import { useContext } from "react"
+import {Context} from "../Context"
+import { toUpperCase } from "../Utilities/Utilities"
 
 const Side = () => {
-    const {currentPage, toUpperCase, pageUp, pageDown} = useContext(Context)
+    const {currentPage, pageUp, pageDown} = useContext(Context)
     
     const currentDate = new Date().toLocaleDateString()
 
