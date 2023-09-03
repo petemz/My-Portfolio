@@ -8,7 +8,7 @@ const Home = () => {
     const {setCurrentPage} = useContext(Context)
 
     return (
-        <div className="overflow-y-hidden h-full pl-28 xl:pl-12 pr-28 xl:pr-10 lg:px-10 flex justify-between xl:items-center lg:pb-16 lg:justify-center">
+        <div className="overflow-y-hidden h-full px-28\ xl:pl-12 xl:pr-10 lg:px-10 flex justify-between xl:items-center lg:pb-16 lg:justify-center">
             <div className="flex flex-col items-center justify-center lg:pt-12">
                 <div className="mb-10">
                     <p className="text-center">
@@ -28,7 +28,7 @@ const Home = () => {
                 </Link>
             </div>
 
-            <div className="-xl:pt-14      lg:hidden">
+            <div className="-xl:pt-14 lg:hidden">
                 <div className="w-[430px] xl:w-[350px] xl:h-[350px] h-[430px] relative">
                     <div className="absolute top-0 left-0 w-96 h-96 xl:w-80 xl:h-80 z-10 border border-emerald-800 ">
                         <img src={avatar} alt="avatar" />
