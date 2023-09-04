@@ -3,26 +3,19 @@ import React, { useEffect, useState, useCallback } from 'react'
 const CustomCursor = () => {
     const [ isHoveringButtonOrLink, setIsHoveringButtonOrLink ] = useState(false)
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
-    const [isHoveringArt, setIsHoveringArt] = useState(false)
+    //const [isHoveringArt, setIsHoveringArt] = useState(false)
     const [isCursorVisible, setIsCursorVisible] = useState(false)
 
     const handleMouseEnterButtonOrLink = (e) => {
-        let targetName = e.currentTarget.className
-        let name = targetName.includes('art')
-        name && setIsHoveringArt(true)
-
         setIsHoveringButtonOrLink(true)
     }
     const handleMouseLeaveButtonOrLink = (e) => {
-        setIsHoveringArt(false)
         setIsHoveringButtonOrLink(false)
     }
     const handleMouseClick = useCallback((e) => {
         let targetName = e.currentTarget.className
         let name = targetName.includes('angleBrk')
         name === false && setIsHoveringButtonOrLink(false)
-        
-        setIsHoveringArt(false)
     }, [])
 
     // Add event listeners for buttons and links
