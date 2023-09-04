@@ -31,22 +31,27 @@ const About = () => {
 
             <div className="pt-4 xl:pt-28 w-[750px] xl:w-full h-full overflow-y-auto flex flex-col items-ce">
                 <div className="mb-10">
-                    <p className="text-lg">Hi, I'm Peter Emmies, a student of Computer Science at the University of Lagos. As a frontend web developer, I am dedicated to creating functional, interactive and sleek web applications that meet the needs of clients and users alike. With expertise in JavaScript, React.js, Vue.js, and other technologies.
+                    <p className="text-lg">Hi! I'm <span className=" font-semibold">Peter Emmies</span>, a student of Computer Science at the University of Lagos. As a frontend web developer, I am dedicated to creating functional, interactive and sleek web applications that meet the needs of clients and users alike. With expertise in JavaScript, React.js, Vue.js, and other technologies.
                     <br/>I also have a strong understanding and knowledge of cybersecurity and networking principles. I am always eager to take on new challenges and push my skills to the next level.
                     In my free time, I love playing chess and listening to music.</p> 
                 </div>
 
-                <div className="grid xs:grid-cols-2 grid-cols-3 m-auto w-full max-w-[800px]">
+                <div className="w-2/3 m-auto mb-20">
+                    <img src={reactCert} alt={'React Certiificate'}/>
+                </div>
+
+                <div>
+                    <h2 className="text-3xl font-bold mb-6">Badges</h2>
+
+                    <div className="grid xs:grid-cols-2 grid-cols-3 m-auto w-full max-w-[800px]">
                         {badges.map(badge => {
                             return(
                                 <CredlyBadge id={badge.id} key={badge.id}/>
                             )}
                         )}
+                    </div>                    
                 </div>
 
-                <div className="w-2/3 m-auto">
-                    <img src={reactCert} alt={'React Certiificate'}/>
-                </div>
             </div>
         </div>
     )

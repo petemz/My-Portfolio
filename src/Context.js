@@ -3,14 +3,16 @@ import { useNavigate } from "react-router-dom"
 
 const Context = createContext()
 
-function ContextProvider(props) {
+const ContextProvider = (props) => {
     const [currentPage, setCurrentPage] = useState({page:"home", index:1})
     const [overlayMenu, setOverlayMenu] = useState(false)
     
     const navItems = ["home", "about", "skills", "projects", "contact"]
     
     const pages = [{page:"home", index:1}, {page:"about", index:2}, {page:"skills", index:3}, {page:"projects", index:4}, {page:"contact", index:5}]
-        
+     
+    let navigate = useNavigate()
+
     const pageUp = () => {
         if (currentPage.index !== 1){
             let newPage = pages.find(page => page.index === currentPage.index - 1)
@@ -29,17 +31,15 @@ function ContextProvider(props) {
         }
     }
     
-    let navigate = useNavigate()
-    
     useEffect(() => {
         const storedCurrentPage = window.sessionStorage.getItem("currentPage");
-    if (storedCurrentPage) {
-      setCurrentPage(JSON.parse(storedCurrentPage));
-    }
-      }, []);
+        if (storedCurrentPage) {
+            setCurrentPage(JSON.parse(storedCurrentPage));
+        }
+      }, [])
     
     useEffect(() => {
-        window.sessionStorage.setItem('currentPage', JSON.stringify(currentPage));
+        window.sessionStorage.setItem('currentPage', JSON.stringify(currentPage))
     }, [currentPage])
 
     return (
