@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const CustomCursor = () => {
     const [ isHoveringButtonOrLink, setIsHoveringButtonOrLink ] = useState(false)
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
-    //const [isHoveringArt, setIsHoveringArt] = useState(false)
     const [isCursorVisible, setIsCursorVisible] = useState(false)
 
     const handleMouseEnterButtonOrLink = (e) => {
@@ -12,18 +11,12 @@ const CustomCursor = () => {
     const handleMouseLeaveButtonOrLink = (e) => {
         setIsHoveringButtonOrLink(false)
     }
-    const handleMouseClick = useCallback((e) => {
-        let targetName = e.currentTarget.className
-        let name = targetName.includes('angleBrk')
-        name === false && setIsHoveringButtonOrLink(false)
-    }, [])
 
     // Add event listeners for buttons and links
     const buttonsAndLinks = document.querySelectorAll('button, a, .art')
 
     buttonsAndLinks.forEach((el) => {
         el.addEventListener('mouseenter', handleMouseEnterButtonOrLink)
-        el.addEventListener('click', handleMouseClick)
         el.addEventListener('mouseleave', handleMouseLeaveButtonOrLink)
     })
 
@@ -42,10 +35,9 @@ const CustomCursor = () => {
             buttonsAndLinks.forEach((el) => {
                 el.removeEventListener('mouseenter', handleMouseEnterButtonOrLink)
                 el.removeEventListener('mouseleave', handleMouseLeaveButtonOrLink)
-                el.removeEventListener('click', handleMouseClick)
             })        
         }
-    }, [])
+    })
 
     // Check for hover support using feature detection
     const supportsHover = window.matchMedia('(hover: hover)').matches;
