@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { Context } from "./Context";
+import { motion, useAnimation } from 'framer-motion';
 import Footer from "./Components/Footer";
 import Header from "./Components/Header"
 import Side from "./Components/Side";
@@ -11,7 +12,7 @@ import Projects from "./Components/Projects";
 import About from "./Components/About";
 import OverlayMenu from "./Components/OverlayMenu";
 import Welcome from "./Components/Welcome";
-import { motion, useAnimation } from 'framer-motion';
+import CustomCursor from './Components/CustomCursor'
 
 function App() {
   const { overlayMenu } = useContext(Context)
@@ -30,7 +31,7 @@ function App() {
   }, [controls]);
 
   return (
-    <div className="bg-[#eee] relative cursor-context-menu h-screen pb-16 pt-20">
+    <div className="bg-[#eee] relative h-screen pb-16 pt-20">
       <Header />
       <Side />
       <Footer />
@@ -66,6 +67,8 @@ function App() {
           <Welcome />
         </motion.div>     
       }
+
+      <CustomCursor/>
     </div> 
   )
 }
