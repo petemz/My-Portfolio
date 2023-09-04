@@ -9,7 +9,7 @@ import Skills from "./Components/Skills";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 import About from "./Components/About";
-import OverlayMenu from "./OverlayMenu";
+import OverlayMenu from "./Components/OverlayMenu";
 import Welcome from "./Components/Welcome";
 import { motion, useAnimation } from 'framer-motion';
 

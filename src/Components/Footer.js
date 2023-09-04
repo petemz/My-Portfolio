@@ -17,28 +17,28 @@ const Footer = () => {
 
                 <nav className="text-xl text-[#5f5f5f]">
                     <ul className="flex">
-                        <a href="mailto:peteremmies7@gmail.com" target="blank">
-                            <li className="ml-4">
+                        <a href="mailto:peteremmies7@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <li className="ml-4 hover:text-orange-400">
                                 <FaEnvelope/>
                             </li>
                         </a>
-                        <a href="https://github.com/petemz" target="blank">
-                            <li className="ml-4">
+                        <a href="https://github.com/petemz" target="_blank" rel="noopener noreferrer">
+                            <li className="ml-4 hover:text-black">
                                 <FaGithub />
                             </li>
                         </a>
-                        <a href="https://www.linkedin.com/in/peter-emmies" target="blank">
-                            <li className="ml-4">
+                        <a href="https://www.linkedin.com/in/peter-emmies" target="_blank" rel="noopener noreferrer">
+                            <li className="ml-4 hover:text-blue-600">
                                 <FaLinkedin />
                             </li>
                         </a>
-                        <a href="https://twitter.com/petemz_" target="blank">
-                            <li className="ml-4">
+                        <a href="https://twitter.com/petemz_" target="_blank" rel="noopener noreferrer">
+                            <li className="ml-4 hover:text-blue-500">
                                 <FaTwitter />
                             </li>
                         </a>
-                        <a href="https://www.instagram.com/petemz" target="blank">
-                            <li className="ml-4">
+                        <a href="https://www.instagram.com/petemz" target="_blank" rel="noopener noreferrer">
+                            <li className="ml-4 hover:text-red-400">
                                 <FaInstagram />
                             </li>
                         </a>

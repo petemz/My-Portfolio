@@ -39,15 +39,9 @@ module.exports = {
         
         '-sm': {'min': '750px'},
   
-        'cpro': {'max': '780'},
-  
         'xs': {'max': '600px'},
   
         '-xs': {'min': '600px'},
-  
-        'xxs': {'max': '500px'},
-        
-        '-xxs': {'min': '500px'},
       }
     },
     plugins: [],

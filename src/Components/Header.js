@@ -33,7 +33,6 @@ const Header = () => {
                 <Logo />
             </Link>
 
-            
             <button onClick={() => setOverlayMenu(true)} className="text-4xl hidden sm:block">
                 {<FiMenu/>}
             </button>

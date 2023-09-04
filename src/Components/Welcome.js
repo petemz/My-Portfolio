@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Logo from "../Assets/Logo";
 
 const Welcome = () => {
-    const words = ['HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'TYPESCRIPT']
+    const words = ['HTML', 'CSS', 'JAVASCRIPT', 'TYPESCRIPT', 'REACT',]
 
     const interval = 1000
 
