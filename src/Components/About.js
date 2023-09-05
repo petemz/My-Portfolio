@@ -4,7 +4,7 @@ import { useContext } from "react"
 import reactCert from '../Assets/reactCert.png'
 
 const About = () => {
-    const {currentPage} = useContext(Context)
+    const {currentPage, isDarkMode} = useContext(Context)
     const badges = [
         {id:"1568ba80-aa62-44d6-bb48-02fcefc409ed"},
         {id:"a0d994dd-5bcd-4773-8ee2-89aae28a7afe"},
@@ -20,7 +20,7 @@ const About = () => {
                 <div className="w-max">
                     <p className="text-5xl md:text-4xl font-bold mt-2">About</p>
                     <div className="flex items-center pb-3">
-                        <div className="w-full h-[2px] mr-2 bg-black"></div>
+                        <div className={`w-full h-[2px] mr-2 ${isDarkMode ? 'bg-[#eee]' : 'bg-black'}`}></div>
                         <p className="text-xl md:text-lg flex">
                             <span className="mr-1">Page</span>
                             <span className="font-semibold">{` 0${currentPage.index}`}</span>

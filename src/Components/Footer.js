@@ -4,7 +4,7 @@ import {Context} from "../Context"
 import { toUpperCase } from "../Utilities/Utilities"
 
 const Footer = () => {
-    const {currentPage, pageUp, pageDown} = useContext(Context)
+    const {currentPage, pageUp, pageDown, isDarkMode} = useContext(Context)
     const currentYear = new Date().getFullYear()
 
     return (
@@ -15,7 +15,7 @@ const Footer = () => {
                     <span>{currentYear}</span>
                 </div>
 
-                <nav className="text-xl text-[#5f5f5f]">
+                <nav className={`text-xl ${isDarkMode ? 'text-[#eee]' : 'text-[#5f5f5f]'}`}>
                     <ul className="flex">
                         <a href="mailto:peteremmies7@gmail.com" target="_blank" rel="noopener noreferrer">
                             <li className="ml-4 hover:text-orange-400">

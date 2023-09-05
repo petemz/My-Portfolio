@@ -3,7 +3,7 @@ import {Context} from "../Context"
 import { FaGithub } from "react-icons/fa"
 
 const Projects = () => {
-    const { currentPage } = useContext(Context)
+    const { currentPage, isDarkMode } = useContext(Context)
 
     const projects = [
         {name:"Ignis", languages:"React + Tailwind CSS", description:"An e-commerce website for a fashion brand", link:"https://ignis-petemz.vercel.app", img: require("../Assets/projectsImage/ignis.png")},
@@ -23,7 +23,7 @@ const Projects = () => {
                 <div className="w-max">
                     <p className="text-5xl md:text-4xl font-bold mt-2">Projects</p>
                     <div className="flex items-center">
-                        <div className="w-full h-[2px] mr-2 bg-black"></div>
+                        <div className={`w-full h-[2px] mr-2 ${isDarkMode ? 'bg-[#eee]' : 'bg-black'}`}></div>
                         <p className="text-xl md:text-lg flex">
                             <span className="mr-1">Page</span>
                             <span className="font-semibold">{` 0${currentPage.index}`}</span>
@@ -35,7 +35,7 @@ const Projects = () => {
             <div className="w-full m-auto px-[8%] flex flex-col items-center">
                 {projects.map(project => {
                     return (
-                        <div className="relative w-full max-w-[800px] -lg:h-[530px] mt-10 mb-24 p-12 py-14 xs:p-10 grid -lg:grid-cols-[40px_1fr_250px] gap-x-10 rounded-[80px] md:rounded-[60px] xs:rounded-[50px] bg-[#d8d2cb] border border-emerald-800" key={project.name}>
+                        <div className={`relative w-full max-w-[800px] -lg:h-[530px] mt-10 mb-24 p-12 py-14 xs:p-10 grid -lg:grid-cols-[40px_1fr_250px] gap-x-10 rounded-[80px] md:rounded-[60px] xs:rounded-[50px] ${isDarkMode ? 'bg-black' : 'bg-[#d8d2cb]'} border border-emerald-800`} key={project.name}>
                             <div className="lg:hidden my-auto [word-spacing:5px] text-emerald-800 font-semibold w-max rotate-180 flex justify-center [writing-mode:vertical-rl]">
                                 <span>{project.languages}</span>
                             </div> 
@@ -52,7 +52,7 @@ const Projects = () => {
                             <div className="flex flex-col justify-center lg:mt-6 text-lg">
                                 <h2 className="text-5xl lg:text-4xl -lg:mb-14 mb-2 font-semibold break-words">{project.name}</h2>
 
-                                <p className="-lg:mb-20 mb-2 text-emerald-800"><a href={project.link} target="_blank" rel="noopener noreferrer">VISIT THE WEBSITE</a></p>
+                                <p className="-lg:mb-20 mb-2 hover:underline text-emerald-800"><a href={project.link} target="_blank" rel="noopener noreferrer">VISIT THE WEBSITE</a></p>
 
                                 <FaGithub className="-md:text-3xl text-2xl"/>
                             </div>
