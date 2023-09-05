@@ -57,7 +57,7 @@ function App() {
 
       {overlayMenu && <OverlayMenu />}
         
-      {/*isWelcome && 
+      {isWelcome && 
         <motion.div
           className="slide fixed h-screen w-full z-50 top-0 bg-red-600"
           initial={{ y: 0 }}
@@ -65,7 +65,7 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           <Welcome />
-        </motion.div>  */   
+        </motion.div>  
       }
 
     </div> 
