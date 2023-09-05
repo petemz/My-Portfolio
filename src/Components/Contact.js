@@ -3,7 +3,7 @@ import {Context} from "../Context"
 import { useContext } from "react"
 
 const Contact = () => {
-    const {currentPage} = useContext(Context)
+    const { currentPage, isDarkMode } = useContext(Context)
 
     const contacts = [
         {name: "Email", username: "peteremmies7@gmail.com", link:"mailto:peteremmies7@gmail.com", icon: <FaEnvelope />},
@@ -18,7 +18,7 @@ const Contact = () => {
                 <div className="w-max">
                     <p className="text-5xl md:text-4xl font-bold mt-2">Contact</p>
                     <div className="flex items-center">
-                        <div className="w-full h-[2px] mr-2 bg-black"></div>
+                        <div className={`w-full h-[2px] mr-2 ${isDarkMode ? 'bg-[#eee]' : 'bg-black'}`}></div>
                         <p className="text-xl md:text-lg flex">
                             <span className="mr-1">Page</span>
                             <span className="font-semibold">{` 0${currentPage.index}`}</span>
@@ -31,7 +31,7 @@ const Contact = () => {
                 {contacts.map(contact => {
                     return (
                         <div className="w-[305px] md:w-72 sm:w-[305px] sm:h-40 md:h-36 group h-40 relative transition-all ease-out hover:scale-110 duration-500" key={contact.name}>
-                            <div className="absolute pt-6 px-5 bg-[#d8d2cb] group group-hover:bg-black group-hover:text-white top-0 left-0 w-72 h-36 z-10">
+                            <div className={`absolute pt-6 px-5 group ${isDarkMode ? 'bg-[#000] group-hover:bg-[#d8d2cb] group-hover:text-black' : 'bg-[#d8d2cb] group-hover:bg-black group-hover:text-white'} top-0 left-0 w-72 h-36 z-10`}>
                                 <div className="flex items-center text-2xl">
                                     <div className="mr-4">
                                         {contact.icon}
@@ -42,14 +42,14 @@ const Contact = () => {
                                     <em>{contact.username}</em>
                                 </p>
                                 <a href={contact.link} target="blank" className="w-max block group-hover:animate-wiggle">
-                                    <button className="w-[70px] h-8 px-2 text-white group-hover:bg-[#d8d2cb] group-hover:text-black hover:bg-[#d8d2cb] rounded bg-black flex justify-between items-center">
+                                    <button className={`w-[70px] h-8 px-2 ${isDarkMode ? 'text-black group-hover:bg-black group-hover:text-white hover:bg-#black bg-[#d8d2cb]' : 'text-white group-hover:bg-[#d8d2cb] group-hover:text-black hover:bg-[#d8d2cb] bg-black'} rounded flex justify-between items-center`}>
                                         <span>Visit</span>
                                         <span className="text-sm font font-bold"><FaArrowRight /></span>
                                     </button>
                                 </a>
                             </div>
 
-                            <div className="absolute w-72 h-36 bottom-0 right-0 border-4 group-hover:bg-[#d8d2cb] border-black">
+                            <div className={`absolute w-72 h-36 bottom-0 right-0 border-4 ${isDarkMode ? 'group-hover:bg-black border-[#d8d2cb]' : 'group-hover:bg-[#d8d2cb] border-black'}`}>
                             </div>
                         </div>
                     )}

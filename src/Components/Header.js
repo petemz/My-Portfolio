@@ -4,15 +4,14 @@ import { useContext } from "react"
 import { FiMenu } from "react-icons/fi"
 import Logo from "../Assets/Logo"
 import { toUpperCase } from "../Utilities/Utilities"
-//import { useState } from "react"
 
 const Header = () => {
-    const {currentPage, setCurrentPage, setOverlayMenu, navItems} = useContext(Context)
+    const {currentPage, setCurrentPage, setOverlayMenu,  isDarkMode, setIsDarkMode, navItems} = useContext(Context)
 
     const nav = navItems.map((item, index) => {
-        const activeLink = currentPage.page === item ? `text-black border-b border-black` : ''
+        const activeLink = currentPage.page === item && `border-b ${isDarkMode ? 'text-white border-white' : 'text-black border-black'}`
         return (
-            <li key={index} className="hover:text-black ml-6">
+            <li key={index} className={` ml-6 ${isDarkMode ? 'hover:text-white' : 'hover:text-black'}`}>
                 <Link 
                     onClick={() => setCurrentPage({page:item, index: index + 1})} 
                     to={item === 'home' ? '/' : '/' + item} 
@@ -33,15 +32,25 @@ const Header = () => {
                 <Logo />
             </Link>
 
-            <button onClick={() => setOverlayMenu(true)} className="text-4xl hidden sm:block">
-                {<FiMenu/>}
-            </button>
-
-            <nav className="text-[17px] sm:hidden text-[#5f5f5f] ">  
+        <div className="flex items-center">
+            <nav className={`text-[17px] sm:hidden text-[#5f5f5f]`}>  
                 <ul className="flex">
                     {nav}
                 </ul>
             </nav>
+
+            <button onClick={() => setOverlayMenu(true)} className="text-4xl hidden sm:block">
+                {<FiMenu/>}
+            </button>
+
+            <button 
+                onClick={() => setIsDarkMode(val => !val)}
+                className={`${isDarkMode ? 'border-[#eee]' : 'border-black' } flex w-7 h-7 ml-8 border-2 rounded-full overflow-hidden`}
+            >
+                <div className={`${isDarkMode ? 'bg-[#eee]' : 'bg-black'} h-full w-[43%]`}></div>
+            </button>
+        </div>
+            
         </header>
       )
 }

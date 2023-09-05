@@ -7,7 +7,7 @@ import { FiX } from "react-icons/fi"
 
 
 const OverlayMenu = () => {
-    const {currentPage, setCurrentPage, setOverlayMenu, navItems, } = useContext(Context)
+    const {currentPage, setCurrentPage, setOverlayMenu, navItems, isDarkMode} = useContext(Context)
 
     return (
         <div className="bottom-20 top-0 pt-32 h-full w-full fixed z-50 bg-inherit ">
@@ -37,7 +37,7 @@ const OverlayMenu = () => {
                 )}
             </div>
         
-            <nav className="text-xl text-[#5f5f5f] absolute right-8 bottom-0">
+            <nav className={`text-xl ${isDarkMode ? 'text-white' : 'text-[#5f5f5f]'} absolute right-8 bottom-0`}>
                 <ul className=" justify-end">
                     <a href="mailto:peteremmies7@gmail.com" target="_blank" rel="noopener noreferrer">
                         <li className="my-4 hover:text-orange-400">

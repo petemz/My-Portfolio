@@ -12,10 +12,10 @@ import Projects from "./Components/Projects";
 import About from "./Components/About";
 import OverlayMenu from "./Components/OverlayMenu";
 import Welcome from "./Components/Welcome";
-import CustomCursor from './Components/CustomCursor'
+//import CustomCursor from './Components/CustomCursor'
 
 function App() {
-  const { overlayMenu } = useContext(Context)
+  const { overlayMenu, isDarkMode } = useContext(Context)
 
   const controls = useAnimation()
 
@@ -31,8 +31,8 @@ function App() {
   }, [controls]);
 
   return (
-    <div className="bg-[#eee] relative h-screen pb-16 pt-20">
-      <Header />
+    <div className={`${isDarkMode ? 'bg-[#121212] text-white' : 'bg-[#eee]'} transition-colors duration-500 relative h-screen pb-16 pt-20`}>
+      <Header/>
       <Side />
       <Footer />
 
@@ -65,10 +65,9 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           <Welcome />
-        </motion.div>     
+        </motion.div>  
       }
 
-      <CustomCursor/>
     </div> 
   )
 }

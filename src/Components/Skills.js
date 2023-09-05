@@ -2,7 +2,7 @@ import { Context } from "../Context"
 import { useContext } from "react"
 
 const Skills = () => {
-    const { currentPage } = useContext(Context)
+    const { currentPage, isDarkMode } = useContext(Context)
     
     const skills = [
         <svg viewBox="0 0 128 128">
@@ -49,7 +49,7 @@ const Skills = () => {
                 <div className="w-max">
                     <p className="text-5xl md:text-4xl font-bold mt-2">Skills</p>
                     <div className="flex items-center">
-                        <div className="w-full h-[2px] mr-2 bg-black"></div>
+                        <div className={`w-full h-[2px] mr-2 ${isDarkMode ? 'bg-[#eee]' : 'bg-black'}`}></div>
                         <p className="text-xl md:text-lg flex">
                             <span className="mr-1">Page</span>
                             <span className="font-semibold">{` 0${currentPage.index}`}</span>

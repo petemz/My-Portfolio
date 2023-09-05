@@ -6,6 +6,7 @@ const Context = createContext()
 const ContextProvider = (props) => {
     const [currentPage, setCurrentPage] = useState({page:"home", index:1})
     const [overlayMenu, setOverlayMenu] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(false)
     
     const navItems = ["home", "about", "skills", "projects", "contact"]
     
@@ -32,18 +33,24 @@ const ContextProvider = (props) => {
     }
     
     useEffect(() => {
-        const storedCurrentPage = window.sessionStorage.getItem("currentPage");
+        const storedCurrentPage = window.sessionStorage.getItem("currentPage")
         if (storedCurrentPage) {
             setCurrentPage(JSON.parse(storedCurrentPage));
+        }
+
+        const storedColorMode = window.sessionStorage.getItem("darkMode")
+        if (storedColorMode !== null && storedColorMode !== undefined) {
+            setIsDarkMode(JSON.parse(storedColorMode));
         }
       }, [])
     
     useEffect(() => {
         window.sessionStorage.setItem('currentPage', JSON.stringify(currentPage))
-    }, [currentPage])
+        window.sessionStorage.setItem('darkMode', JSON.stringify(isDarkMode))
+    }, [currentPage, isDarkMode])
 
     return (
-        <Context.Provider value={{currentPage, setCurrentPage, overlayMenu, setOverlayMenu, navItems, pages, pageUp, pageDown}}>
+        <Context.Provider value={{currentPage, setCurrentPage, overlayMenu, setOverlayMenu, isDarkMode, setIsDarkMode, navItems, pages, pageUp, pageDown}}>
             {props.children}
         </Context.Provider>
     )
