@@ -12,6 +12,7 @@ import Projects from "./Components/Projects";
 import About from "./Components/About";
 import OverlayMenu from "./Components/OverlayMenu";
 import Welcome from "./Components/Welcome";
+import ScrollTop from "./Utilities/ScrollTop"
 //import CustomCursor from './Components/CustomCursor'
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         </motion.div>  
       }
 
+      <ScrollTop />
     </div> 
   )
 }

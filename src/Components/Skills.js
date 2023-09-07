@@ -59,9 +59,9 @@ const Skills = () => {
             </div>
 
             <div className=" pt-16  px-4 xl:w-[500px] h-max m-auto grid xs:grid-cols-3 grid-cols-4 xs:gap-y-10 gap-14">
-                {skills.map(skill => {
+                {skills.map((skill, index) => {
                     return (
-                        <div className="w-20 transition-all ease-in-out hover:scale-110 duration-500">
+                        <div className="w-20 transition-all ease-in-out hover:scale-110 duration-500" key={index}>
                             {skill}
                         </div>
                     )}
