@@ -6,6 +6,7 @@ const Projects = () => {
     const { currentPage, isDarkMode } = useContext(Context)
 
     const projects = [
+        {name: "GrantWrite AI", languages:"Typescript, React, Tailwind CSS, Chakra UI", description: "An AI powered grant writing web app.", link: "https://grantwriteai.com", img: null},
         {name:"Ignis", languages:"React + Tailwind CSS", description:"An e-commerce website for a fashion brand", link:"https://ignis-petemz.vercel.app", img: require("../Assets/projectsImage/ignis.png")},
         {name:"BudgetBuddy", languages:"Vue + Tailwind CSS", description:"A bugeting app set budgets and to monitor finances", link:"https://try-budget-buddy.netlify.app", img: require("../Assets/projectsImage/budgetBuddy.png")},
         {name:"Yoshiki Art Clone", languages:"React + Tailwind CSS", description:"A clone of the Yoshiki Okamura Art website", link:"https://yoshikiokamura-clone.vercel.app", img: require("../Assets/projectsImage/yoshiki-okamura.png")},
@@ -15,7 +16,6 @@ const Projects = () => {
         {name:"Vivasia", languages:"VueJS + CSS", description:"Unveiling the beauty and diversity of Asia.", link:"https://vivasia.netlify.app", img: require("../Assets/projectsImage/vivasia.png")},
         {name:"Form Templates", languages:"React + Tailwind CSS", description:"A Form Template Search Interface with multiple features.", link:"https://form-templates-petemz.netlify.app", img: require("../Assets/projectsImage/form-temps.png")},
         {name:"Naijchat", languages:"ReactJS, NodeJS, MongoDB, Socket IO", description:"A microblogging platform.", link:"https://naij.netlify.app", img: null},
-        {name:"PixSale", languages:"React + Tailwind CSS", description:"Browse and buy amazing photos online.", link:"https://petemz.github.io/bejamas", img: null}
     ]
     
     return (
@@ -50,7 +50,7 @@ const Projects = () => {
 
                             </div>
 
-                            <div className="flex flex-col justify-center lg:mt-6">
+                            <div className={`flex flex-col justify-center ${project.img && "lg:mt-6"}`}>
                                 <h2 className="text-5xl lg:text-4xl -lg:mb-14 mb-2 font-semibold break-words">{project.name}</h2>
 
                                 <p>{project.description}</p>
