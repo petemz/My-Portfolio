@@ -6,7 +6,7 @@ const Projects = () => {
 	const { currentPage, isDarkMode } = useContext(Context)
 
 	const projects = [
-		{name: "GrantWrite AI", languages:"Typescript, React, Tailwind CSS, Chakra UI", description: "An AI powered grant writing web app.", link: "https://grantwriteai.com", img: null},
+		{name:"GrantWrite AI", languages:"Typescript, React, Tailwind CSS, Chakra UI", description: "An AI powered grant writing web app.", link: "https://grantwriteai.com", img: null},
 		{name:"Ignis", languages:"React + Tailwind CSS", description:"An e-commerce website for a fashion brand", link:"https://ignis-petemz.vercel.app", img: require("../Assets/projectsImage/ignis.png")},
 		{name:"Yoshiki Art Clone", languages:"React + Tailwind CSS", description:"A clone of the Yoshiki Okamura Art website", link:"https://yoshikiokamura-clone.vercel.app", img: require("../Assets/projectsImage/yoshiki-okamura.png")},
 		{name:"BudgetBuddy", languages:"Vue + Tailwind CSS", description:"A bugeting app set budgets and to monitor finances", link:"https://try-budget-buddy.netlify.app", img: require("../Assets/projectsImage/budgetBuddy.png")},
@@ -39,14 +39,11 @@ const Projects = () => {
 								<span>{project.languages}</span>
 							</div> 
 
-							
-								{project.img ? 
-									<div className="-lg:h-full md:h-80 sm:h-72 mx-auto w-full lg:max-w-[300px] block overflow-hidden">
-										<img className="object-cover mx-auto h-full sm:rounded-[30px] rounded-[40px]" src={project.img} alt="" />
-									</div>
-								:
-									<div className="w-full h-full sm:rounded-[30px] rounded-[40px] bg-[#C2B9AE]"></div>
-								}
+							{project.img && 
+								<div className="-lg:h-full md:h-80 sm:h-72 mx-auto w-full lg:max-w-[300px] block overflow-hidden">
+									<img className="object-cover mx-auto h-full sm:rounded-[30px] rounded-[40px]" src={project.img} alt="" />
+								</div>
+							}
 
 							<div className={`flex flex-col justify-center ${project.img && "lg:mt-6"}`}>
 								<h2 className="text-5xl lg:text-4xl md:text-3xl -lg:mb-14 mb-1.5 font-semibold break-words">{project.name}</h2>
