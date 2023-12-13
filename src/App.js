@@ -5,11 +5,11 @@ import { motion, useAnimation } from 'framer-motion';
 import Footer from "./Components/Footer";
 import Header from "./Components/Header"
 import Side from "./Components/Side";
-import Home from "./Components/Home";
-import Skills from "./Components/Skills";
-import Contact from "./Components/Contact";
-import Projects from "./Components/Projects";
-import About from "./Components/About";
+import Home from "./Pages/Home";
+import Skills from "./Pages/Skills";
+import Contact from "./Pages/Contact";
+import Projects from "./Pages/Projects";
+import About from "./Pages/About";
 import OverlayMenu from "./Components/OverlayMenu";
 import Welcome from "./Components/Welcome";
 import ScrollTop from "./Utilities/ScrollTop"
