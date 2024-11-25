@@ -6,16 +6,15 @@ const Projects = () => {
 	const { currentPage, isDarkMode } = useContext(Context)
 
 	const projects = [
-		{name:"GrantWrite AI", languages:"Typescript, React, Tailwind CSS, Chakra UI", description: "An AI powered grant writing web app.", link: "https://grantwriteai.com", img: null},
+		{name:"GrantWrite AI", languages:"Typescript, React, Tailwind CSS, Chakra UI", description: "An AI powered grant writing web app", link: "https://grantwriteai.com", img: null},
+		{name: "Reveno", languages: "Webflow", description: "A B2B sales and marketing platform", link: "https://www.reveno.io", img: null},
+		{name: "MHCS", languages: "Typescript, React, Tailwind CSS, Framer Motion", description: "A website for a medical company", link: "https://www.mhcshealth.com", img: null},
 		{name:"Ignis", languages:"React + Tailwind CSS", description:"An e-commerce website for a fashion brand", link:"https://ignis-petemz.vercel.app", img: require("../Assets/projectsImage/ignis.png")},
 		{name:"Yoshiki Art Clone", languages:"React + Tailwind CSS", description:"A clone of the Yoshiki Okamura Art website", link:"https://yoshikiokamura-clone.vercel.app", img: require("../Assets/projectsImage/yoshiki-okamura.png")},
-		{name:"BudgetBuddy", languages:"Vue + Tailwind CSS", description:"A bugeting app set budgets and to monitor finances", link:"https://try-budget-buddy.netlify.app", img: require("../Assets/projectsImage/budgetBuddy.png")},
-		{name:"ImageHive", languages:"React + Tailwind CSS", description:"A beautiful image gallery powered by the Unsplash API", link:"https://model-unsplash.netlify.app", img: require("../Assets/projectsImage/image-hive.png")},
 		{name:"Canal Market Clone", languages:"ReactJS, Tailwind CSS, GSAP", description:"A clone of the Canal Market website", link:"https://canal-market-clone.vercel.app", img: require("../Assets/projectsImage/canal-market.png")},
+		{name:"ImageHive", languages:"React + Tailwind CSS", description:"A beautiful image gallery powered by the Unsplash API", link:"https://model-unsplash.netlify.app", img: require("../Assets/projectsImage/image-hive.png")},
 		{name:"PharmAssist", languages:"React + Tailwind CSS", description:"Manage medication with ease - Prescription app", link:"https://pharamacy.netlify.app", img: require("../Assets/projectsImage/pharmacy.png")},
 		{name:"Vivasia", languages:"VueJS + CSS", description:"Unveiling the beauty and diversity of Asia.", link:"https://vivasia.netlify.app", img: require("../Assets/projectsImage/vivasia.png")},
-		{name:"Form Templates", languages:"React + Tailwind CSS", description:"A Form Template Search Interface with multiple features.", link:"https://form-templates-petemz.netlify.app", img: require("../Assets/projectsImage/form-temps.png")},
-		{name:"Naijchat", languages:"ReactJS, NodeJS, MongoDB, Socket IO", description:"A microblogging platform.", link:"https://naij.netlify.app", img: null},
 	]
 	
 	return (
